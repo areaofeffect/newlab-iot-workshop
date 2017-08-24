@@ -61,8 +61,8 @@ def blink(color):
 def listen():
     #print(adc.read())
     if adc.read() < threshold:
-      time.sleep_ms(150)
       blink(color)
+      time.sleep_ms(150)
       
 
 
@@ -73,6 +73,7 @@ def main():
   try:
     while True:
       listen()
+      time.sleep_ms(25)
 
   except (KeyboardInterrupt):
     print('\n', "Exit on Ctrl-C: Good bye!")
