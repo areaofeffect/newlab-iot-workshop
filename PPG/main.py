@@ -5,13 +5,13 @@ from pye import pye
 
 from ppg.MAX30105 import ParticleSensor
 from ppg.heartbeat import HeartBeat
+from led.ledCtrl import LEDCtrl
+
+
 
 # gpio==
-from machine import Pin, ADC #ws2812, piezo
+from machine import Pin, Timer #ws2812
 np = neopixel.NeoPixel(Pin(16), 4, timing=1)
-adc = ADC(Pin(34))
-
-
 
 print("")
 print("Starting WiFi ...")
@@ -75,11 +75,6 @@ def blink(color):
         np[i] = (0, 0, 0)
     np.write()
 
-def listen():
-    #print(adc.read())
-    if adc.read() < threshold:
-      blink(color)
-
 def main():
   print("mac address", mac)
   off()
@@ -96,6 +91,8 @@ def main():
 
   HearRateSensor = HeartBeat()
 
+  LedCtrl = LEDCtrl()
+
   rates = [0] * 4
   rateSize = len(rates)
   rateSpot = 0
@@ -103,8 +100,7 @@ def main():
 
   try:
     while True:
-      #listen()
-
+    
       lastBeat = time.ticks_ms()
       for FIFO_pointer in range(32):
           #try:
@@ -117,6 +113,7 @@ def main():
               rates = [0] * 4
               rateSpot = 0
               lastBeat = time.ticks_ms()
+              LedCtrl.beatPerMinute(0, False)
           else:
             # print("hr ir:", irValue, "red:", sensor_data[0])
             if (HearRateSensor.checkForBeat(irValue)):
@@ -139,6 +136,7 @@ def main():
                         beatAvg += rates[x]
                     beatAvg /= rateSize
                     print (beatAvg)
+                    LedCtrl.beatPerMinute(beatAvg, True)
 
 
   except (KeyboardInterrupt):
@@ -146,6 +144,7 @@ def main():
 
   finally:
     print('\n', "Disconnecting.")
+    MAX30105.set_bitMask(0x09, 0xBF, 0x40)  # reset to POR
    
 if __name__ == "__main__":
     main()

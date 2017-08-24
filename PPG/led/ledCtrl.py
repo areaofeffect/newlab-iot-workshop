@@ -10,69 +10,6 @@ class LEDCtrl(object):
         self.beat = 0
         self.fingerPresent = False
 
-    def wheel(self, pos):
-        if pos < 85:
-            return (pos * 3, 255 - pos * 3, 0)
-        elif pos < 170:
-            pos -= 85
-            return (255 - pos * 3, 0, pos * 3)
-        else:
-            pos -= 170
-            return (0, pos * 3, 255 - pos * 3)
-
-    def showAnimation(self, description):
-        print("showAnimation", description)
-        # clear sky
-        # few clouds
-        # scattered clouds
-        # broken clouds
-        # shower rain
-        # rain
-        # thunderstorm
-        # snow
-        # mist
-        # https://openweathermap.org/weather-conditions
-
-    def showKnock(self):
-        for i in range(np.n):
-            np[i] = (255, 255, 255)
-        np.write()
-        time.sleep(.2)
-        for i in range(np.n):
-            np[i] = (0, 0, 0)
-        np.write()
-
-
-    def blink(self, color, duration=100):
-        for i in range(np.n):
-            np[i] = color
-        np.write()
-        time.sleep_ms(duration)
-        for i in range(np.n):
-            np[i] = (0, 0, 0)
-        np.write()
-
-    def wrong(self, color):
-        for i in range(np.n):
-            np[i] = color
-        np.write()
-        time.sleep_ms(500)
-        for i in range(np.n):
-            np[i] = (0, 0, 0)
-        np.write()
-                 
-    def rainbow(self, iterations=5):
-        n = np.n
-        for j in range(256*iterations):
-            for i in range(n):
-                np[i] = self.wheel((int(i * 256 / n + j) & 255))
-                np.write()
-                time.sleep_ms(2)
-
-        for i in range(n):
-            np[i] = (0, 0, 0)
-        np.write()  
-
     def heartbeat(self):
         print("heartbeat")
         for i in range(0, 4 * 256, 8):
