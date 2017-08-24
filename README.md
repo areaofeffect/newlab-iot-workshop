@@ -37,6 +37,27 @@ Let's get started.
 [Getting biometric](https://github.com/areaofeffect/newlab-iot-workshop/tree/master/PPG)
 
 
+![Hero](https://images.contentful.com/kifoc1e7z7rr/3IEjxSIKesIS06co28a0SK/d629d435be55c6a3af59ecd5d85e3afb/Hero-Shot.jpg)
+
+<br/>
+<br/>
+
+We are here to teach you how to talk to machines and are proud to present you The New Lab IoT board. We developed a new way to prototype ideas, sense the world and connect with our fellow humans and machines.
+
+Our platform is as capable as Raspberry Pi, AdaFruit and Intel IoT boards. It's faster than some other off the shelf boards out now. It ships out-of-the-box with BLE, WiFi, environmental and biometric sensing capabilities. We can't wait to see what new ideas you come up with while hacking with it.
+
+
+We hope you love building with it as much as we loved making it.
+
+*- Area of Effect*
+
+<br />
+
+#### Get by with a little from our friends
+
+AoE thanks all those that helped us bring this idea into reality. 10xBeta, New Lab, dagtronix, @johngineer
+
+
 ##### Further reading / viewing
 
 [ESP-IDF](https://esp-idf.readthedocs.io/en/v2.1/index.html)
