@@ -144,7 +144,7 @@ Spiffs is designed with following characteristics in mind:
 
 #### Get by with a little help from our friends
 
-AoE thanks all those that helped us bring this idea into reality. 10xBeta, New Lab, dagtronix, @johngineer
+AoE thanks all those that helped us bring this idea into reality. [10xBeta](http://www.10xbeta.com/), [New Lab](http://newlab.com/), [dagtronix](http://dagtronix.com/), [johngineer](http://www.johngineer.com/blog/)
 
 <br/>
 <br/>
