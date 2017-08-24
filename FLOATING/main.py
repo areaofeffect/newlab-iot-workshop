@@ -58,7 +58,7 @@ def allon():
 
 def heartbeatOnly():
   print("heartbeatOnly")
-  LedCtrl.blink( (0,0,0), 500 )
+  LedCtrl.blink( (255,0,0), 500 )
 
 def weatherOnly():
   print("weatherOnly")
@@ -142,7 +142,7 @@ def sub_cb(topic, msg):
     data = {}
     for i in range(0, len(m), 2):
       data[m[i]] = m[i+1] 
-    if (t[1] == "ck_yr34-35"):
+    if (t[1] == mac):
       if t[2] == "toggle":
         toggleState(data["mode"], data["set"])
       if t[2] == "weather":
