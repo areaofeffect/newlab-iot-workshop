@@ -103,7 +103,7 @@ def main():
 
   try:
     while True:
-      listen()
+      #listen()
 
       lastBeat = time.ticks_ms()
       for FIFO_pointer in range(32):
