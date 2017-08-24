@@ -19,18 +19,6 @@ print("WiFi started")
 utime.sleep_ms(500)
 mac = ubinascii.hexlify(network.WLAN().config('mac'),':').decode()
 
-rtc = machine.RTC()
-print("Synchronize time from NTP server ...")
-rtc.ntp_sync(server="hr.pool.ntp.org")
-while not rtc.synced():
-    utime.sleep_ms(100)
-
-print("Time set")
-utime.sleep_ms(500)
-t = rtc.now()
-print(str(t[3])+':'+str(t[4])+':'+str(t[5])+' '+str(t[2])+'/'+str(t[1])+'/'+str(t[0]))
-print("")
-
 def red():
   print("red")
   n = np.n
@@ -73,8 +61,8 @@ def blink(color):
 def listen():
     #print(adc.read())
     if adc.read() < threshold:
-      time.sleep_ms(150)
       blink(color)
+      time.sleep_ms(150)
       
 
 
@@ -85,6 +73,7 @@ def main():
   try:
     while True:
       listen()
+      time.sleep_ms(25)
 
   except (KeyboardInterrupt):
     print('\n', "Exit on Ctrl-C: Good bye!")
