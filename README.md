@@ -51,14 +51,80 @@ We hope you love building with it as much as we loved making it.
 
 *- Area of Effect*
 
-<br />
+<br/>
+<br/>
 
-#### Get by with a little from our friends
+#### TECHNICAL SPECS: LET'S DIVE RIGHT IN.
 
-AoE thanks all those that helped us bring this idea into reality. 10xBeta, New Lab, dagtronix, @johngineer
+##### CPU
+* [Espressif ESP32 Datasheet](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf)
+* Tensilica Xtensa LX6
+* 32 bit
+* Dual Core
+* 160/240 MHz
+* 520 KB RAM
+* 4-16 MB Flash
+
+##### Networking
+* Wifi 2.4 GHz
+* Bluetooth 4.2
+* Bluetooth Low Energy (BLE) (Beacon Mode)
+* A2DP/ AVRCP/SPP, HSP/HFP, RFCOMM (Can be a paired phone accessory)
+* +12 dBm transmitting power
+* SDIO / SPI / UART
+* Bluetooth Piconet and Scatternet
+
+##### Interfaces and Peripherals
+* On-board ADC and DAC
+* Temperature sensor
+* 10 x Capacitive Touch sensors
+* 4 x SPI, 2 x I2C, 2 x I2C, 3 x UART
+* TX / RX
+* 16 Channel LED PWM
+* Hall sensor
+* Analog pre-amplifier
+
+<br/>
+<br/>
 
 
-##### Further reading / viewing
+#### More on Micropython
+
+GitHub: [MicroPython ported to the ESP32](https://github.com/micropython/micropython-esp32/tree/esp32/esp32)
+
+MicroPython is a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library and is optimised to run on microcontrollers and in constrained environments.
+
+- Can run with 256k of code space and 16k RAM
+- Is extensible with C or C++ modules
+
+
+* https://www.kickstarter.com/projects/214379695/micropython-on-the-esp8266-beautifully-easy-iot
+* http://micropython.org/
+
+<br/>
+<br/>
+
+#### SPI Flash File System (SPIFFS)
+Spiffs makes it possible for us to use a file system to organize our application on a microcontroller. We think this is awesome. 
+
+
+[SPIFFS GitHub](https://github.com/pellepl/spiffs), [Dcocumentation](http://esp8266.github.io/Arduino/versions/2.0.0/doc/filesystem.html)
+<br/>
+
+Spiffs is designed with following characteristics in mind:
+
+  * Small (embedded) targets, sparse RAM without heap
+  * Only big areas of data (blocks) can be erased
+  * An erase will reset all bits in block to ones
+  * Writing pulls one to zeroes
+  * Zeroes can only be pulled to ones by erase
+  * Wear leveling
+  
+<br/>
+<br/>
+
+
+#### Further reading / viewing
 
 [ESP-IDF](https://esp-idf.readthedocs.io/en/v2.1/index.html)
 
@@ -71,6 +137,17 @@ AoE thanks all those that helped us bring this idea into reality. 10xBeta, New L
 [GOTO 2016 • MicroPython & the Internet of Things • Damien George](https://www.youtube.com/watch?v=EvGhPmPPzko)
 
 [The Humane Representation of Thought • Bret Victor](https://vimeo.com/115154289)
+
+<br/>
+<br/>
+
+
+#### Get by with a little help from our friends
+
+AoE thanks all those that helped us bring this idea into reality. 10xBeta, New Lab, dagtronix, @johngineer
+
+<br/>
+<br/>
 
 
 #### Standing on the shoulders of giants
