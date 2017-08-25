@@ -15,7 +15,7 @@ PiezoCtrl = PIEZOCtrl()
 
 #
 from machine import Pin
-np = neopixel.NeoPixel(Pin(16), 3, timing=1)
+np = neopixel.NeoPixel(Pin(16), 4, timing=1)
 
 print("")
 print("Starting WiFi ...")
