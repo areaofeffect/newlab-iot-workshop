@@ -1,6 +1,6 @@
 import time, neopixel
 from machine import Pin, Timer
-np = neopixel.NeoPixel(Pin(16), 3, timing=1)
+np = neopixel.NeoPixel(Pin(16), 4, timing=1)
 
 
 class LEDCtrl(object):
